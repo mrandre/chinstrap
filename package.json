@@ -1,0 +1,12 @@
+{
+  "name":         "chinstrap-compile",
+  "description":  "Compiles Chinstrap Templates",
+  "version":      "0.0.1",
+  "engines":      {
+    "node":       ">=0.6.0"
+  },
+  "bin":          {
+    "chinstrap-compile": "./bin/chinstrap-compile"
+  },
+  "dependencies": {}
+}
