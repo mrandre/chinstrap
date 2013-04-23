@@ -37,4 +37,25 @@ That last one really kills me. That is illegible. So chinstrap offers a small la
 
 Notice also the /FOR. It's a straight-through swap for "}", but it's infinitely clearer what it's closing. There's one of these for all the shrothand options.
 
-## 4. On the matter of loops.
+## 4. On the matter of loops and values.
+
+  1. Chinstrap thinks you should be able to use methods in your data objects, if you want.
+  2. Chinstrap thinks you shouldn't have to worry about whether something is a method or not.
+  3. Chinstrap hates typing.
+
+When you insert a value using 
+
+ 	> {{= item.value }}
+
+chinstrap will inspect your insertion, and call value as a function if that's possible, or simply return the value otherwise.
+
+ As a convenience, you can also define an iterator shortcut for loops. (Or anything really. Chinstrap isn't picky.) To defive the iterator's value, use
+
+	> {{ @= item }}
+
+To use it, simply call
+
+	>  {{= @name }}
+
+Under the hood, Chinstrap will replace "@" with "item."
+
