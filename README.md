@@ -25,15 +25,15 @@ The intent here is simple: A chinstrap template is fundamentally a php/jsp/asp s
 
 The above choices leave us with situations like
 
-  	> {{ for (var i=0, len=items.length; i<len; i++) { }}
-	> ...
-	> {{ } }}
+  	{{ for (var i=0, len=items.length; i<len; i++) { }}
+	...
+	{{ } }}
 
 That last one really kills me. That is illegible. So chinstrap offers a small layer of shorthand. The basic idea is, take the existing syntax, capitalize the key word, like WHILE or FOR, and chinstrap will assume the rest of the line is the expression you intended. So for example:
 
-    > {{ FOR var i=0, len=items.length; i<len; i++ }}
-	> ...
-	> {{ /FOR }}
+    {{ FOR var i=0, len=items.length; i<len; i++ }}
+	...
+	{{ /FOR }}
 
 Notice also the /FOR. It's a straight-through swap for "}", but it's infinitely clearer what it's closing. There's one of these for all the shrothand options.
 
@@ -45,17 +45,17 @@ Notice also the /FOR. It's a straight-through swap for "}", but it's infinitely 
 
 When you insert a value using 
 
- 	> {{= item.value }}
+ 	{{= item.value }}
 
 chinstrap will inspect your insertion, and call value as a function if that's possible, or simply return the value otherwise.
 
  As a convenience, you can also define an iterator shortcut for loops. (Or anything really. Chinstrap isn't picky.) To defive the iterator's value, use
 
-	> {{ @= item }}
+	{{ @= item }}
 
 To use it, simply call
 
-	>  {{= @name }}
+	{{= @name }}
 
-Under the hood, Chinstrap will replace "@" with "item."
+Under the hood, Chinstrap will replace "@" with "item." Which means you can use @ to represent any object with properties and/or methods.
 
