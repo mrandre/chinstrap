@@ -1,3 +1,14 @@
+Install
+=======
+
+```sh
+
+git clone https://github.com/mrandre/chinstrap.git
+
+[sudo] npm install -g ./chinstrap
+
+```
+
 Recipe for Chinstrap
 ====================
 
@@ -61,9 +72,9 @@ When you insert a value using
 {{= item.value }}
 ```
 
-chinstrap will inspect your insertion, and call value as a function if that's possible, or simply return the value otherwise.
+Chinstrap will inspect your insertion, and call value as a function if that's possible, or simply return the value otherwise.
 
- As a convenience, you can also define an iterator shortcut for loops. (Or anything really. Chinstrap isn't picky.) To define the iterator's value, use
+As a convenience, you can also define an iterator shortcut for loops. (Or anything really. Chinstrap isn't picky.) To define the iterator's value, use
 
 ```
 {{ @= item }}
@@ -76,4 +87,17 @@ To use it, simply call
 ```
 
 Under the hood, Chinstrap will replace "@" with "item." Which means you can use @ to represent any object with properties and/or methods. Then Chinstrap will check if name is a method or a value, and respond appropriately.
+
+##5. Command Line
+
+```
+
+chinstrap path/to/project/folder/**/*.template.html > path/to/output/mytemplates.js
+
+```
+
+The chinstrap command line tool takes a glob argument that points at your template files, whereever they might be, and compiles each template into a function version of itself. The combined functions are placed into a hash, whose name is the name of the file, minus its extension.
+
+
+##6. Subtemplates
 
