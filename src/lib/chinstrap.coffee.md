@@ -137,6 +137,6 @@ You can write an if statement in two alternate styles.
 
 		compileForClose: (str) ->
 
-	new Chinstrap()
+	module.exports = new Chinstrap()
 )()
 ```

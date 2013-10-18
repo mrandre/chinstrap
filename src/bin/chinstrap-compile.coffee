@@ -3,9 +3,9 @@ fs   		= require('fs')
 mkdirp 		= require('mkdirp')
 glob 		= require("glob")
 program 	= require("commander")
-lib  		= path.join(path.dirname(fs.realpathSync(__filename)), '../lib')
-VERSION 	= require(path.join("../..", "package.json")).version
-chinstrap 	= require(lib + "/chinstrap.js")
+lib  		= path.join(path.dirname(fs.realpathSync(__filename)), '..', 'lib')
+VERSION 	= require(path.join("..", "..", "package.json")).version
+chinstrap 	= require(path.join(lib, "chinstrap"))
 
 program
 	.version(VERSION)
@@ -43,7 +43,7 @@ program
 					compiledFn = if program.plain
 						rawTemplates[name]
 					else
-						new Function("obj", chinstrap(file))
+						new Function("obj", chinstrap.render(file))
 					namedOutput[name] = compiledFn
 				
 				compiledItems = {}
@@ -66,7 +66,7 @@ program
 							mkdirp.sync(path.dirname(outputPath))
 							fs.writeFileSync(outputPath, wrapString(merged, program.wrap))
 					else
-						fileContent = "/* Compiled by Chinstrap v" + VERSION +" " + new Date() + " */ \n\n" + stringVersion
+						fileContent = "/* Compiled by Chinstrap v#{VERSION} #{new Date()} */ \n\n#{stringVersion}"
 						fileContent = wrapString(stringVersion, program.wrap)
 						fs.writeFileSync(program.output, fileContent)
 				else
