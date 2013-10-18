@@ -1,7 +1,7 @@
 {
   "name": "chinstrap",
   "preferGlobal": "true",
-  "main": "./bin/chinstrap-compile.js",
+  "main": "./app/bin/chinstrap-compile.js",
   "author": {
     "name": "Andre Behrens",
     "email": "mrandre@gmail.com"
@@ -18,11 +18,11 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/mrandre/chinstrap-compile/LICENSE-MIT"
+      "url": "https://github.com/mrandre/chinstrap/LICENSE-MIT"
     }
   ],
   "bin": {
-    "chinstrap": "./bin/chinstrap-compile.js"
+    "chinstrap": "./app/bin/chinstrap-compile.js"
   },
   "dependencies": {
     "commander": "~1.1.1",
