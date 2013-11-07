@@ -8,7 +8,7 @@ module.exports = (grunt) ->
 			chinstrap:
 				cwd: "src"
 				src: ["**/*.coffee"]
-				dest: "/app/"
+				dest: "app"
 				expand: true
 				ext: ".js"
 
