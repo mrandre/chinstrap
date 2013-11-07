@@ -43,7 +43,7 @@ program
 					compiledFn = if program.plain
 						rawTemplates[name]
 					else
-						new Function("obj", chinstrap.render(rawTemplates[name]))
+						new Function("config", chinstrap.render(rawTemplates[name]))
 					namedOutput[name] = compiledFn
 				
 				compiledItems = {}

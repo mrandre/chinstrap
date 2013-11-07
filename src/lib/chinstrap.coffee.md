@@ -87,7 +87,7 @@ Workhorse method; converts the template into a function.
 			str = str.split("\t").join("');\n")
 			str = str.split(@close).join("p.push('")
 			str = str.split("\r").join("\\'")
-			str = "\nvar p=[],iterator = {},print=function(){p.push.apply(p,arguments);},value = function(val){if (typeof val == 'function') {return val.apply(iterator);} else {return val;}};\nwith(obj){\np.push('" + str + "');\n}\nreturn p.join('');\n"
+			str = "\nvar p=[],iterator = {},print=function(){p.push.apply(p,arguments);},value = function(val){if (typeof val == 'function') {return val.apply(iterator);} else {return val;}};\nwith(config){\np.push('" + str + "');\n}\nreturn p.join('');\n"
 ```
 
 String Manipulation Functions

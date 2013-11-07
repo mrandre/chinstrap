@@ -50,7 +50,7 @@
       str = str.split("\t").join("');\n");
       str = str.split(this.close).join("p.push('");
       str = str.split("\r").join("\\'");
-      return str = "\nvar p=[],iterator = {},print=function(){p.push.apply(p,arguments);},value = function(val){if (typeof val == 'function') {return val.apply(iterator);} else {return val;}};\nwith(obj){\np.push('" + str + "');\n}\nreturn p.join('');\n";
+      return str = "\nvar p=[],iterator = {},print=function(){p.push.apply(p,arguments);},value = function(val){if (typeof val == 'function') {return val.apply(iterator);} else {return val;}};\nwith(config){\np.push('" + str + "');\n}\nreturn p.join('');\n";
     };
 
     Chinstrap.prototype.stripWhiteSpace = function(str) {
