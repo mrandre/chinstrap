@@ -77,6 +77,6 @@
 
   })();
 
-  new Chinstrap();
+  module.exports = new Chinstrap();
 
 }).call(this);
