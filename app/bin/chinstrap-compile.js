@@ -41,7 +41,7 @@ program.command("* <srcDir>").action(function(srcDir) {
         name = filename.split(".")[0];
         rawTemplates[name] = fs.readFileSync(file, 'utf8');
         namePaths[name] = fs.realpathSync(file);
-        compiledFn = program.plain ? rawTemplates[name] : new Function("obj", chinstrap.render(file));
+        compiledFn = program.plain ? rawTemplates[name] : new Function("obj", chinstrap.render(rawTemplates[name]));
         return namedOutput[name] = compiledFn;
       });
       compiledItems = {};
