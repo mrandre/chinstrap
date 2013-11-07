@@ -98,6 +98,37 @@ chinstrap path/to/project/folder/**/*.template.html > path/to/output/mytemplates
 
 The chinstrap command line tool takes a glob argument that points at your template files, whereever they might be, and compiles each template into a function version of itself. The combined functions are placed into a hash, whose name is the name of the file, minus its extension.
 
+There are a number of options.
+
+```sh
+
+Usage: chinstrap [options] <srcDir>
+
+  Commands:
+
+    * <srcDir>
+
+  Options:
+
+    -h, --help                   output usage information
+    -V, --version                output the version number
+    -o, --output <path>          Set target file or folder for writing.
+    -e, --extension <extension>  Explicitly declare the file extension pattern. Default is .template.html.
+    -w, --wrap <wrapper>         String containing a ***, which will be replaced with the result of the *merged* compliation.
+    -p, --plain                  Return compilation results as a flat string instead of a function.
+    -d, --debug                  Append a raw version of the template as a comment.
+    
+```
+
+I want to draw your attention to -w / --wrap. This lets you specify a wrapper string, the most likely use case is to place your templates into a callback function in your templates file. So:
+
+```js
+
+chinstrap -o public/js/templates.js src/templates/**/*.markup.html --wrap "Framework.import(***);"
+
+
+```
+
 
 ##6. Subtemplates
 
