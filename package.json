@@ -11,7 +11,7 @@
     "chinstrap"
   ],
   "description": "Compiles Chinstrap Templates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "node": ">=0.6.0"
   },
@@ -30,6 +30,8 @@
     "mkdirp": "~0.3.5"
   },
   "devDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.7.0"
   }
 }
