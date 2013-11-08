@@ -1,6 +1,5 @@
 {
   "name": "chinstrap",
-  "preferGlobal": "true",
   "main": "./app/bin/chinstrap-compile.js",
   "author": {
     "name": "Andre Behrens",
