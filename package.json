@@ -1,6 +1,6 @@
 {
   "name": "chinstrap",
-  "main": "./app/bin/chinstrap-compile.js",
+  "main": "./app/chinstrap-compile.js",
   "author": {
     "name": "Andre Behrens",
     "email": "mrandre@gmail.com"
@@ -21,7 +21,7 @@
     }
   ],
   "bin": {
-    "chinstrap": "./app/bin/chinstrap-compile.js"
+    "chinstrap": "./app/chinstrap-compile.js"
   },
   "dependencies": {
     "commander": "~1.1.1",
