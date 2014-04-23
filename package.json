@@ -14,7 +14,7 @@
     "url": "git@github.com:mrandre/chinstrap.git"
   },
   "description": "Compiles Chinstrap Templates",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "engines": {
     "node": ">=0.6.0"
   },
