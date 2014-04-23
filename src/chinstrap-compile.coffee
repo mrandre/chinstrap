@@ -3,9 +3,8 @@ fs   		= require('fs')
 mkdirp 		= require('mkdirp')
 glob 		= require("glob")
 program 	= require("commander")
-lib  		= path.join(path.dirname(fs.realpathSync(__filename)), '..', 'lib')
 VERSION 	= require(path.join("..", "..", "package.json")).version
-chinstrap 	= require(path.join(lib, "chinstrap"))
+chinstrap 	= require("chinstrap-engine")
 
 program
 	.version(VERSION)
