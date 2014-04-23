@@ -11,7 +11,7 @@
     "chinstrap"
   ],
   "description": "Compiles Chinstrap Templates",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "node": ">=0.6.0"
   },
